@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc -b && cp -R src/generated dist/generated",
     "start": "tsc -b && node dist/index.js"
   },
   "keywords": [],
@@ -11,9 +12,13 @@
   "license": "ISC",
   "packageManager": "pnpm@10.6.3",
   "dependencies": {
+    "@prisma/client": "6.7.0",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "prisma": "^6.7.0",
+    "zod": "^3.24.4"
   }
 }
