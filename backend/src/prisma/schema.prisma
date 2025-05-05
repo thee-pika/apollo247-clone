@@ -15,7 +15,7 @@ datasource db {
 }
 
 model Doctor {
-  id               String @id @default(uuid())
+  id               String      @id @default(uuid())
   name             String
   specialist       String
   fees             Int
@@ -24,4 +24,23 @@ model Doctor {
   experienceFields String
   rating           Int
   patientsCount    Int
+  consultMode      ConsultMode @default(hospitalVisit)
+  language         Language    @default(Hindi)
+  facility         Facility    @default(Apollo)
+}
+
+enum Language {
+  Telugu
+  Hindi
+  English
+}
+
+enum Facility {
+  Apollo
+  Other
+}
+
+enum ConsultMode {
+  onlineVisit
+  hospitalVisit
 }
